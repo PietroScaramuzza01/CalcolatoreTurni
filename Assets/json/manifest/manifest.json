@@ -8,12 +8,12 @@
     "theme_color": "#1f2937",
     "icons": [
       {
-        "src": "../../img/turniLavoro_192",
+        "src": "../../img/turniLavoro_192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "../../img/turniLavoro_512",
+        "src": "../../img/turniLavoro_512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
