@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestione Turni</title>
+  <link rel="stylesheet" href="Assets/css/style.css" />
+  <!-- Web App Meta -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Turni Lavoro">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="icon.png"> <!-- Metti un'icona 180x180px -->
+
+<!-- Favicon e Manifest -->
+<link rel="manifest" href="Assets/json/manifest/manifest.json">
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <button class="active" data-view="turni-view">Turni</button>
+      <button data-view="stipendi-view">Stipendi</button>
+      <button data-view="impostazioni-view">Impostazioni</button>
+    </nav>
+  </header>
+
+  <main id="turni-view">
+    <section class="today-turno">
+      <h2>Turno di oggi</h2>
+      <div id="turno-oggi" class="rest-box">Oggi sei di riposo.</div>
+    </section>
+
+    <section class="aggiungi-turno">
+      <h3>Aggiungi / Modifica Turno</h3>
+      <form id="turno-form">
+        <input type="hidden" name="id" />
+        <label>Data <input type="date" name="data" required /></label>
+        <label><input type="checkbox" name="festivo" /> Giorno festivo</label>
+        <label>Ora Inizio <input type="time" name="oraInizio" required /></label>
+        <label>Ora Fine <input type="time" name="oraFine" required /></label>
+        <label>Pausa (minuti) <input type="number" name="pausa" value="0" min="0" /></label>
+        <button type="submit">Salva Turno</button>
+        <button type="button" onclick="apriPopupMalattia()">📄 Malattia</button>
+      </form>
+    </section>
+    <div id="malattia-popup" style="display:none;">
+      <label>Inizio: <input type="date" id="malattia-inizio"></label><br>
+      <label>Fine: <input type="date" id="malattia-fine"></label><br>
+      <label>Protocollo (facoltativo): <input type="text" id="malattia-protocollo"></label><br>
+      <button onclick="salvaMalattia()">Conferma</button>
+      <button onclick="chiudiPopupMalattia()">Annulla</button>
+    </div>
+
+    <section class="i-tuoi-turni">
+      <h3>I Tuoi Turni</h3>
+
+      <div class="filtri">
+        <select id="filtro-mese"></select>
+        <select id="filtro-anno"></select>
+        <div class="navigazione-settimane">
+          <button id="prev-settimana">◀</button>
+          <span id="etichetta-settimana">Settimana corrente</span>
+          <button id="next-settimana">▶</button>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Orario</th>
+            <th>Pausa</th>
+            <th>Ore</th>
+            <th>Lordo</th>
+            <th>Netto</th>
+            <th>Azioni</th>
+          </tr>
+        </thead>
+        <tbody id="lista-turni">
+          <!-- Turni caricati dinamicamente -->
+        </tbody>
+      </table>
+
+      <div class="totali" id="totali-mese">
+        <!-- Totali del mese corrente, riempiti da JS -->
+        Totale ore: 0<br />
+        Ore settimanali contratto: 0<br />
+        Ore straordinarie: 0<br />
+        Guadagno lordo: €0.00<br />
+        Guadagno netto (stimato): €0.00
+      </div>
+    </section>
+
+  </main>
+
+  <main id="stipendi-view" style="display:none;">
+    <section>
+      <h3>Stipendi</h3>
+      <label for="filtro-anno-stipendi">Filtra per anno:</label>
+      <select id="filtro-anno-stipendi"></select>
+      <div id="lista-stipendi" class="stipendi-container"></div>
+    </section>
+  </main>
+
+  <main id="impostazioni-view" style="display:none;">
+    <section class="impostazioni" id="impostazioni-sezione">
+      <h3>Impostazioni</h3>
+      <form id="impostazioni-form">
+        <label>Ore settimanali contratto <input type="number" name="oreSettimanali" min="0" /></label>
+        <label>Paga oraria (€) <input type="number" name="pagaOraria" step="0.01" min="0" /></label>
+        <label>Percentuale tasse (%) <input type="number" name="percentualeTasse" step="0.1" min="0"
+            value="10" /></label>
+        <label>Maggiorazione Notturna (%) <input type="number" name="extraNotturno" step="0.1" min="0" /></label>
+        <label>Maggiorazione Domenicale (%) <input type="number" name="extraDomenicale" step="0.1" min="0" /></label>
+        <label>Maggiorazione Festiva (%) <input type="number" name="extraFestivo" step="0.1" min="0" /></label>
+        <label>Fascia Notturna Inizio <input type="time" name="fasciaNotteInizio" value="00:00" /></label>
+        <label>Fascia Notturna Fine <input type="time" name="fasciaNotteFine" value="06:00" /></label>
+        <label>% Guadagno malattia: <input type="number" name="percentualeMalattia" value="75" step="1" min="0"
+            max="100"></label><br>
+        <label><input type="checkbox" name="malattiaPrimiTreGiorniPagati"> Pagamento primi 3 giorni malattia</label>
+
+        <small class="hint">Usa una media del 10%. Modifica se il netto calcolato differisce spesso da quello
+          reale.</small>
+        <button type="submit">Salva Impostazioni</button>
+      </form>
+    </section>
+  </main>
+  <section class="backup-section">
+    <h4>Backup Dati</h4>
+    <button onclick="esportaBackup()">📤 Esporta Backup</button>
+    <input type="file" id="file-backup" accept=".json" style="display:none;" onchange="importaBackup(event)" />
+    <button onclick="document.getElementById('file-backup').click()">📥 Importa Backup</button>
+  </section>
+
+
+  <div id="modale-stipendio" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h3 id="modale-titolo"></h3>
+      <div id="modale-dettagli"></div>
+      <label>Stipendio effettivo (€): <input type="number" id="stipendio-effettivo-input" step="0.01" /></label>
+      <div id="modale-confronto"></div>
+      <button onclick="salvaStipendioEffettivo()">Salva</button>
+      <button onclick="chiudiModale()">Chiudi</button>
+    </div>
+  </div>
+
+  <footer>
+    <small>Tutti i dati sono salvati localmente sul tuo dispositivo.</small>
+  </footer>
+
+  <script src="Assets/js/app.js"></script>
+
+</body>
+
+</html>

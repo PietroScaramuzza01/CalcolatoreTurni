@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-05-03T14:25:36.476Z",
+  "turni": [
+    {
+      "data": "2025-03-01",
+      "oraInizio": "18:00",
+      "oraFine": "00:00",
+      "pausa": 0,
+      "festivo": false,
+      "id": 1
+    },
+    {
+      "data": "2025-03-02",
+      "oraInizio": "11:00",
+      "oraFine": "15:00",
+      "pausa": 0,
+      "festivo": false,
+      "id": 2
+    },
+    {
+      "data": "2025-03-04",
+      "oraInizio": "11:30",
+      "oraFine": "17:00",
+      "pausa": 0,
+      "festivo": false,
+      "id": 3
+    },
+    {
+      "data": "2025-03-06",
+      "oraInizio": "17:00",
+      "oraFine": "01:30",
+      "pausa": 0,
+      "festivo": false,
+      "id": 7
+    },
+    {
+      "data": "2025-03-07",
+      "oraInizio": "17:00",
+      "oraFine": "23:00",
+      "pausa": 0,
+      "festivo": false,
+      "id": 8
+    },
+    {
+      "data": "2025-03-08",
+      "oraInizio": "19:00",
+      "oraFine": "23:00",
+      "pausa": 0,
+      "festivo": false,
+      "id": 9
+    },
+    {
+      "data": "2025-03-09",
+      "oraInizio": "11:00",
+      "oraFine": "14:30",
+      "pausa": 0,
+      "festivo": true,
+      "id": 10
+    },
+    {
+      "data": "2025-03-11",
+      "oraInizio": "12:30",
+      "oraFine": "21:00",
+      "pausa": 30,
+      "festivo": false,
+      "id": 11
+    },
+    {
+      "data": "2025-03-13",
+      "oraInizio": "19:00",
+      "oraFine": "01:30",
+      "pausa": 30,
+      "festivo": false,
+      "id": 12
+    },
+    {
+      "data": "2025-03-14",
+      "oraInizio": "12:30",
+      "oraFine": "21:00",
+      "pausa": 30,
+      "festivo": false,
+      "id": 13
+    },
+    {
+      "data": "2025-03-16",
+      "oraInizio": "11:00",
+      "oraFine": "14:30",
+      "pausa": 0,
+      "festivo": false,
+      "id": 14
+    },
+    {
+      "data": "2025-03-17",
+      "oraInizio": "15:00",
+      "oraFine": "22:00",
+      "pausa": 30,
+      "festivo": false,
+      "id": 15
+    },
+    {
+      "data": "2025-03-18",
+      "oraInizio": "18:00",
+      "oraFine": "01:30",
+      "pausa": 30,
+      "festivo": false,
+      "id": 16
+    },
+    {
+      "data": "2025-03-21",
+      "oraInizio": "18:30",
+      "oraFine": "01:00",
+      "pausa": 30,
+      "festivo": false,
+      "id": 17
+    },
+    {
+      "data": "2025-03-22",
+      "oraInizio": "19:00",
+      "oraFine": "23:00",
+      "pausa": 0,
+      "festivo": false,
+      "id": 18
+    },
+    {
+      "data": "2025-03-23",
+      "oraInizio": "11:00",
+      "oraFine": "14:30",
+      "pausa": 0,
+      "festivo": false,
+      "id": 19
+    },
+    {
+      "data": "2025-03-24",
+      "oraInizio": "16:00",
+      "oraFine": "23:00",
+      "pausa": 30,
+      "festivo": false,
+      "id": 20
+    },
+    {
+      "data": "2025-03-25",
+      "oraInizio": "18:00",
+      "oraFine": "01:30",
+      "pausa": 30,
+      "festivo": false,
+      "id": 21
+    },
+    {
+      "data": "2025-03-27",
+      "oraInizio": "19:00",
+      "oraFine": "01:30",
+      "pausa": 30,
+      "festivo": false,
+      "id": 22
+    },
+    {
+      "data": "2025-03-28",
+      "oraInizio": "17:00",
+      "oraFine": "00:30",
+      "pausa": 30,
+      "festivo": false,
+      "id": 23
+    },
+    {
+      "data": "2025-03-30",
+      "oraInizio": "11:00",
+      "oraFine": "14:30",
+      "pausa": 0,
+      "festivo": false,
+      "id": 24
+    },
+    {
+      "data": "2025-03-31",
+      "oraInizio": "15:00",
+      "oraFine": "22:00",
+      "pausa": 30,
+      "festivo": false,
+      "id": 25
+    }
+  ],
+  "impostazioni": {
+    "oreSettimanali": 24,
+    "pagaOraria": 6.79,
+    "percentualeTasse": 10,
+    "extraNotturno": 25,
+    "extraDomenicale": 10,
+    "extraFestivo": 120,
+    "fasciaNotteInizio": "00:00",
+    "fasciaNotteFine": "06:00"
+  },
+  "stipendi": {
+    "2025-3": 818
+  }
+}

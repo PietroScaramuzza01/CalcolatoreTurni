@@ -1,0 +1,297 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+}
+
+header {
+  background: white;
+  border-bottom: 1px solid #ccc;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em 0;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+nav button {
+  background: none;
+  border: none;
+  font-size: 1em;
+  color: #555;
+  padding: 0.5em;
+  flex: 1;
+  min-width: 33%;
+}
+
+nav button.active {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
+
+main {
+  padding: 1em;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.today-turno,
+.aggiungi-turno,
+.i-tuoi-turni {
+  margin-bottom: 2em;
+  width: 100%;
+}
+
+.rest-box {
+  background: #e8fce8;
+  padding: 1em;
+  border-radius: 5px;
+  color: #2a7a2a;
+}
+
+form label {
+  display: block;
+  margin: 0.5em 0;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.25em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button[type="submit"],
+button {
+  margin-top: 1em;
+  width: 100%;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75em;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.hint {
+  display: block;
+  font-size: 0.8em;
+  color: #555;
+  margin-top: 0.25em;
+}
+
+.stipendi-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.stipendio-box {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1em;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.stipendio-confronto {
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  background-color: #f9f9f9;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.calcolato {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.effettivo {
+  font-weight: bold;
+  color: green;
+}
+
+.differenza {
+  color: #d9534f;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+thead {
+  background: #eee;
+}
+
+td, th {
+  padding: 0.5em;
+  border-bottom: 1px solid #ccc;
+  font-size: 0.9em;
+  word-break: break-word;
+}
+
+.totali {
+  background: #eaf4ff;
+  padding: 1em;
+  margin-top: 1em;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+  color: #777;
+  margin-top: 2em;
+}
+
+/* Colori riga turno */
+tr.normale {
+  background-color: #fefefe;
+}
+tr.domenica {
+  background-color: #fff9c4;
+}
+tr.festivo {
+  background-color: #ffcdd2;
+}
+tr.notturno {
+  background-color: #bbdefb;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 1.5em;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+}
+
+@media (max-width: 375px) {
+  td, th {
+    font-size: 0.8em;
+  }
+
+  nav button {
+    font-size: 0.9em;
+    padding: 0.4em;
+  }
+
+  .totali, button {
+    font-size: 0.95em;
+  }
+}
+.backup-section {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #ccc;
+}
+.backup-section button {
+  display: block;
+  margin-top: 0.5em;
+  padding: 0.5em;
+  width: 100%;
+  font-size: 0.95em;
+}
+.filtri {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.navigazione-settimane {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navigazione-settimane button {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.navigazione-settimane button:hover {
+  background-color: #ddd;
+}
+
+#etichetta-settimana {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.totali {
+  margin-top: 1rem;
+  background-color: #e8f1fc;
+  border-left: 5px solid #2196F3;
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+/* Colore indicativo per la malattia: blu chiaro */
+tr.malattia {
+  background-color: #d0e6ff; /* Azzurro tenue */
+  color: #003366;            /* Testo blu scuro */
+  font-style: italic;
+}
+
+/* Opzionale: evidenzia il bordo sinistro */
+tr.malattia td:first-child {
+  border-left: 4px solid #3399ff;
+}
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#malattia-popup {
+  background-color: #f9f9f9;
+  border: 2px solid #8db2c5;
+  padding: 15px;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
