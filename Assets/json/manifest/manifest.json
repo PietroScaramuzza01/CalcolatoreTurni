@@ -2,7 +2,7 @@
     "name": "Gestione Turni",
     "short_name": "Turni",
     "description": "App per gestire i turni di lavoro e calcolare lo stipendio.",
-    "start_url": "CalcolatoreTurni/index.html",
+    "start_url": "/CalcolatoreTurni/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#1f2937",
