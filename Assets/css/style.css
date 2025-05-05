@@ -295,3 +295,40 @@ tr.malattia td:first-child {
   margin-top: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+tr.malattia {
+  background-color: #ffe0e0;
+  font-style: italic;
+}
+.modal-content {
+  background: white;
+  padding: 1.5em;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.modal-content hr {
+  margin: 1em 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.modal-content strong {
+  color: #007bff;
+}
+
+.modal-content p {
+  margin: 0.4em 0;
+}
+
+#modale-dettagli {
+  margin-bottom: 1em;
+}
